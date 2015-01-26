@@ -1,6 +1,6 @@
 
  -----------------------------------
-| # Election Scoreboard Application |
+| Election Scoreboard Application |
  -----------------------------------
 
 Instructions to run in Terminal(For Ex: COMMAND PROMPT)
