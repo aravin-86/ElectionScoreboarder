@@ -1,0 +1,46 @@
+Feature: Election Scoreboard
+
+	Scenario: New file delivered
+		Given that the election has begun
+		When a new is delivered to the application
+		Then it should be detected, ingested and processed
+		
+	Scenario: Invalid file
+		Given that new file has been detected
+		When that file is ingested
+			And the file is found to be invalid
+		Then it should be flagged as such
+			And it should be disregarded from future processing
+			And a system supervisor notified
+	
+	Scenario: Valid file
+		Given that valid file has been detected
+		When that file is ingested
+			And the file is found to be valid
+		Then processing of the file should continue
+	
+	Scenario: Display results
+		Given that the election is under way
+		When a file is ingested
+			And the file has been validated
+		Then the scoreboard should be output
+			And the scoreboard should display the latest number of seats held by the top 3 parties
+			And the scoreboard should display the current vote share for the top 3 parties
+			And the scoreboard should display aggregate seats and vote share for the remaining parties
+	
+	
+	Scenario: Results sorted
+		Given that the election is under way
+		When a file is ingested
+			And the file has been validated
+		Then the scoreboard should be output and sorted
+			And the scoreboard should display the top 3 parties sorted in Descending order based on the number of seats
+			And the scoreboard should display the others in last place
+	
+	Scenario: Majority seats winner
+		Given that the election is under way
+		When a file is ingested
+			And the file has been validated
+		When the party wins majority seats
+		Then the scoreboard should be output and sorted
+			And the top party should be flagged as winner
