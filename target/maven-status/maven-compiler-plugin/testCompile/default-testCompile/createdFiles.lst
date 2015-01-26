@@ -1,0 +1,3 @@
+gov\uk\election\results\aggregator\ElectionResultsAggregatorTest.class
+gov\uk\election\results\processor\ElectionResultsProcessorTest.class
+gov\uk\election\scoreboard\ElectionScoreboarderTest.class
