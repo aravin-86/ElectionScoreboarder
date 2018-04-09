@@ -2,6 +2,7 @@
  -----------------------------------
 | Election Scoreboard Application |
  -----------------------------------
+### (File Watcher Implementation)
 
 Instructions to run in Terminal(For Ex: COMMAND PROMPT)
 -------------------------------
